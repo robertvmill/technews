@@ -8,6 +8,16 @@ import type {
   ToastProps,
 } from "@/components/ui/toast"
 
+import {
+  Toast,
+  ToastClose,
+  ToastDescription,
+  ToastProvider,
+  ToastTitle,
+  ToastViewport,
+} from "@/components/ui/toast"
+import { useToast as useToastPrimitive } from "@/components/ui/use-toast"
+
 const TOAST_LIMIT = 1
 const TOAST_REMOVE_DELAY = 1000000
 
@@ -191,4 +201,23 @@ function useToast() {
   }
 }
 
-export { useToast, toast }
+export const ToastDemo = () => {
+  const { toast } = useToast()
+
+  return (
+    <div>
+      <button
+        onClick={() => {
+          toast({
+            title: "Scheduled: Catch up",
+            description: "Friday, February 10, 2023 at 5:57 PM",
+          })
+        }}
+      >
+        Show Toast
+      </button>
+    </div>
+  )
+}
+
+export const useToast = useToastPrimitive
