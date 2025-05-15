@@ -1,8 +1,13 @@
 'use client';
 
-import React, { useState } from 'react';
+import { useState } from 'react';
 import Link from 'next/link';
-import { supabase } from '../../lib/supabase/client';
+import { createClient } from '@supabase/supabase-js';
+
+// Initialize Supabase client directly in the component
+const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || '';
+const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || '';
+const supabase = createClient(supabaseUrl, supabaseAnonKey);
 
 export default function LoginCard() {
   const [email, setEmail] = useState('');
