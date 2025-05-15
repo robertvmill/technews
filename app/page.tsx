@@ -1,5 +1,7 @@
 import React from "react";
 import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 export default function Home() {
   return (
@@ -8,12 +10,12 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
           <h1 className="text-2xl font-bold text-gray-900">TechNews</h1>
           <div className="flex space-x-4">
-            <Link href="/login" className="text-blue-600 hover:text-blue-800 font-medium">
-              Login
-            </Link>
-            <Link href="/signup" className="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition-colors">
-              Sign Up
-            </Link>
+            <Button variant="ghost" asChild>
+              <Link href="/login">Login</Link>
+            </Button>
+            <Button asChild>
+              <Link href="/signup">Sign Up</Link>
+            </Button>
           </div>
         </div>
       </header>
@@ -24,22 +26,41 @@ export default function Home() {
           A modern news aggregation application built with Next.js, Prisma, and Supabase.
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full max-w-4xl">
-          <div className="border rounded-lg p-6 shadow-sm">
-            <h2 className="text-2xl font-semibold mb-2">Latest News</h2>
-            <p>Stay up to date with the latest technology news and updates.</p>
-          </div>
-          <div className="border rounded-lg p-6 shadow-sm">
-            <h2 className="text-2xl font-semibold mb-2">Document Management</h2>
-            <p>Upload and manage your documents securely.</p>
-          </div>
-          <div className="border rounded-lg p-6 shadow-sm">
-            <h2 className="text-2xl font-semibold mb-2">Authentication</h2>
-            <p>Secure user authentication powered by Supabase.</p>
-          </div>
-          <div className="border rounded-lg p-6 shadow-sm">
-            <h2 className="text-2xl font-semibold mb-2">Chat</h2>
-            <p>Connect with other users through our integrated chat feature.</p>
-          </div>
+          <Card>
+            <CardHeader>
+              <CardTitle>Latest News</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p>Stay up to date with the latest technology news and updates.</p>
+            </CardContent>
+          </Card>
+          
+          <Card>
+            <CardHeader>
+              <CardTitle>Document Management</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p>Upload and manage your documents securely.</p>
+            </CardContent>
+          </Card>
+          
+          <Card>
+            <CardHeader>
+              <CardTitle>Authentication</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p>Secure user authentication powered by Supabase.</p>
+            </CardContent>
+          </Card>
+          
+          <Card>
+            <CardHeader>
+              <CardTitle>Chat</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p>Connect with other users through our integrated chat feature.</p>
+            </CardContent>
+          </Card>
         </div>
       </main>
 

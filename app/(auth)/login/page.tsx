@@ -1,5 +1,6 @@
 import React from 'react';
-import LoginCard from '../../components/auth/login-card';
+import ShadcnLoginCard from '../../components/auth/shadcn-login-card';
+import { Toaster } from "@/components/ui/toaster";
 
 export default function LoginPage() {
   return (
@@ -7,7 +8,8 @@ export default function LoginPage() {
       <div className="mb-8">
         <h1 className="text-4xl font-bold text-center">TechNews</h1>
       </div>
-      <LoginCard />
+      <ShadcnLoginCard />
+      <Toaster />
     </div>
   );
 } 
